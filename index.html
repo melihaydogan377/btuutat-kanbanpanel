@@ -3,232 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koordine Dijital | Sosyal Medya Check-Up</title>
+    <title>Melih Aydoğan | Dijital Pazarlama ve Strateji Danışmanlığı</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans selection:bg-blue-200">
+<body class="bg-gray-50">
 
-    <nav class="bg-white border-b sticky top-0 z-50 py-4 shadow-sm">
-        <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 p-2 rounded-xl text-white shadow-lg shadow-blue-200">
-                    <i class="fa-solid fa-hashtag text-xl"></i>
-                </div>
-                <span class="text-2xl font-black tracking-tight text-slate-900">KOORDİNE <span class="text-blue-600">DİJİTAL</span></span>
-            </div>
-        </div>
-    </nav>
-
-    <header class="bg-white pt-16 pb-24 border-b relative overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-4">Markanızın Sosyal Medya Check-Up'ını Yapın</h1>
-            <p class="text-lg text-slate-500 max-w-2xl mx-auto mb-8">Sadece kullanıcı adınızı girin. İçerik kalitenizi, etkileşim oranınızı ve rakip konumunuzu saniyeler içinde analiz edelim.</p>
-            
-            <div class="max-w-4xl mx-auto bg-white p-3 rounded-2xl shadow-xl border flex flex-col md:flex-row gap-3 transition-all focus-within:ring-4 focus-within:ring-blue-100">
-                <div class="flex-1 flex items-center bg-slate-50 rounded-xl px-4 border border-slate-200">
-                    <i class="fa-brands fa-instagram text-pink-500 text-xl"></i>
-                    <input id="igHandle" type="text" placeholder="@instagram_hesabiniz" class="w-full px-4 py-3 outline-none bg-transparent text-lg">
-                </div>
-                <div class="flex-1 flex items-center bg-slate-50 rounded-xl px-4 border border-slate-200">
-                    <i class="fa-brands fa-linkedin text-blue-600 text-xl"></i>
-                    <input id="inHandle" type="text" placeholder="Şirket LinkedIn Adı (Opsiyonel)" class="w-full px-4 py-3 outline-none bg-transparent text-lg">
-                </div>
-                <button id="analizBtn" onclick="analiziBaslat()" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-md whitespace-nowrap">
-                    Analiz Et <i class="fa-solid fa-arrow-right ml-2"></i>
-                </button>
-            </div>
-        </div>
+    <header class="gradient-bg text-white py-20 px-6 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Stratejik Marka Yönetimi</h1>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto">Veriye dayalı analizler ve yaratıcı çözümlerle markanızı geleceğe taşıyoruz.</p>
     </header>
 
-    <div id="loading" class="hidden container mx-auto text-center mt-12 pb-20">
-        <i class="fa-solid fa-circle-notch fa-spin text-5xl text-blue-600 mb-6"></i>
-        <h3 class="text-2xl font-bold text-slate-800 animate-pulse">Profiller Taranıyor...</h3>
-        <p class="text-slate-500 mt-2">Son 30 günlük paylaşımlarınız ve etkileşim oranlarınız hesaplanıyor.</p>
-    </div>
-
-    <main id="resultPanel" class="container mx-auto px-6 -mt-10 hidden pb-20">
-        
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-8 relative z-20">
-            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 text-center">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Marka Skoru</p>
-                <h2 class="text-4xl font-black text-slate-800">48<span class="text-lg text-slate-400">/100</span></h2>
-                <span class="text-xs font-bold text-red-500 bg-red-50 px-2 py-1 rounded mt-2 inline-block">Geliştirilmeli</span>
+    <section class="py-16 px-6 max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Hizmetlerimiz</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-indigo-600 text-3xl mb-4"><i class="fas fa-chart-line"></i></div>
+                <h3 class="text-xl font-bold mb-3">Stratejik Planlama</h3>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Pazar ve rakip analizi.</li>
+                    <li>• Kısa ve uzun vadeli hedefleme.</li>
+                    <li>• Marka konumlandırma ve eylem planı.</li>
+                </ul>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 text-center">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Etkileşim Oranı</p>
-                <h2 class="text-4xl font-black text-slate-800">%1.2</h2>
-                <span class="text-xs font-bold text-orange-500 bg-orange-50 px-2 py-1 rounded mt-2 inline-block">Sektör Ort.: %3.5</span>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-indigo-600 text-3xl mb-4"><i class="fas fa-laptop-code"></i></div>
+                <h3 class="text-xl font-bold mb-3">Dijital Varlık Yönetimi</h3>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• SEO uyumlu modern web tasarımı.</li>
+                    <li>• Hız ve dönüşüm optimizasyonu.</li>
+                    <li>• Platform kurulumu ve entegrasyon.</li>
+                </ul>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 text-center">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">İçerik Sıklığı</p>
-                <h2 class="text-4xl font-black text-slate-800">Düzensiz</h2>
-                <span class="text-xs font-bold text-slate-500 mt-2 inline-block">Son post: 14 gün önce</span>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 text-center">
-                <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Kitle Kalitesi</p>
-                <h2 class="text-4xl font-black text-green-600">İyi</h2>
-                <span class="text-xs font-bold text-green-600 bg-green-50 px-2 py-1 rounded mt-2 inline-block">Gerçek Takipçi</span>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                <div class="text-indigo-600 text-3xl mb-4"><i class="fas fa-camera-retro"></i></div>
+                <h3 class="text-xl font-bold mb-3">İçerik ve Reklam</h3>
+                <ul class="text-gray-600 space-y-2 text-sm">
+                    <li>• Profesyonel fotoğraf ve video üretimi.</li>
+                    <li>• Çok kanallı reklam yönetimi.</li>
+                    <li>• Yapay zeka destekli analiz.</li>
+                </ul>
             </div>
         </div>
+    </section>
 
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
-            <div class="lg:col-span-2 bg-white p-8 rounded-3xl shadow-md border border-slate-100">
-                <h3 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                    <i class="fa-solid fa-stethoscope text-blue-600"></i> Detaylı Teşhis Raporu
-                </h3>
+    <section class="bg-gray-100 py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Danışmanlık Paketleri</h2>
+            <div class="grid md:grid-cols-3 gap-8">
                 
-                <div class="space-y-4">
-                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-red-50 border border-red-100">
-                        <div class="bg-red-100 p-3 rounded-full text-red-600"><i class="fa-solid fa-video-slash"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Reels ve Video İçerik Eksikliği</h4>
-                            <p class="text-slate-600 mt-1">Algoritma şu an video içerikleri öne çıkarırken, profiliniz sadece statik görsellerden oluşuyor. Bu durum keşfete düşmenizi %70 oranında engelliyor.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-orange-50 border border-orange-100">
-                        <div class="bg-orange-100 p-3 rounded-full text-orange-600"><i class="fa-solid fa-pen-to-square"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Biyografi (Bio) Optimizasyonu Yetersiz</h4>
-                            <p class="text-slate-600 mt-1">Profilinizdeki bio kısmında net bir "Call to Action" (Harekete Geçirici Mesaj) veya web sitenize yönlendiren güvenilir bir link yapısı bulunmuyor.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4 p-5 rounded-2xl bg-blue-50 border border-blue-100">
-                        <div class="bg-blue-100 p-3 rounded-full text-blue-600"><i class="fa-solid fa-comments"></i></div>
-                        <div>
-                            <h4 class="font-bold text-slate-900 text-lg">Topluluk Yönetimi Eksik</h4>
-                            <p class="text-slate-600 mt-1">Gelen yorumlara yanıt verme süreniz çok uzun. Takipçilerle bağ kurmak için etkileşimli hikayeler (anket/soru-cevap) kullanılmıyor.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="bg-white p-6 rounded-3xl shadow-md border border-slate-100 flex flex-col justify-center">
-                <h3 class="text-lg font-bold text-slate-800 mb-4 text-center">Sosyal Medya Denge Haritası</h3>
-                <div class="w-full h-64">
-                    <canvas id="sosyalRadarChart"></canvas>
-                </div>
-            </div>
-        </div>
-
-        <div class="bg-slate-900 rounded-3xl shadow-xl overflow-hidden border border-slate-800 text-white relative">
-            
-            <div class="grid grid-cols-1 lg:grid-cols-3">
-                <div class="lg:col-span-2 p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-slate-700">
-                    <h3 class="text-3xl font-bold mb-2"><i class="fa-solid fa-route text-blue-500 mr-2"></i> Çözüm Stratejimiz</h3>
-                    <p class="text-slate-400 mb-8">Bu tabloyu tersine çevirmek için uygulayacağımız profesyonel adımlar:</p>
-                    
-                    <ul class="space-y-6">
-                        <li class="flex items-start gap-4">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 font-bold flex items-center justify-center">1</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-blue-300">Kurumsal Kimlik İnşası</h4>
-                                <p class="text-slate-300 text-sm mt-1">Öne çıkanlar, bio ve profil tasarımının kurumsal bir ajans standartlarına getirilmesi.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 font-bold flex items-center justify-center">2</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-blue-300">Dinamik İçerik Üretimi</h4>
-                                <p class="text-slate-300 text-sm mt-1">Aylık 15 Post + 8 Reels planlamasıyla algoritmanın dikkatini çekme ve düzenli paylaşım.</p>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <span class="flex-shrink-0 w-8 h-8 rounded-full bg-blue-600 font-bold flex items-center justify-center">3</span>
-                            <div>
-                                <h4 class="font-bold text-lg text-blue-300">Reklam (Ads) ve Satışa Yönlendirme</h4>
-                                <p class="text-slate-300 text-sm mt-1">Hedef kitleye özel düşük bütçeli reklamlarla organik büyümeyi destekleyip potansiyel müşteri bulma.</p>
-                            </div>
-                        </li>
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-2">Başlangıç</h3>
+                    <div class="text-3xl font-bold mb-6">Dijital Temel</div>
+                    <ul class="text-gray-600 space-y-4 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Kurumsal Kimlik Tasarımı</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Mobil Uyumlu Web Sitesi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Sosyal Medya Kurulumu</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> 3 Aylık Yol Haritası</li>
                     </ul>
+                    <div class="text-2xl font-bold text-indigo-600 mb-6">25.000 TL'den başlayan...</div>
+                    <button class="w-full py-3 rounded-xl border-2 border-indigo-600 text-indigo-600 font-bold hover:bg-indigo-600 hover:text-white transition">Hemen Başlayın</button>
                 </div>
 
-                <div class="p-8 md:p-12 bg-gradient-to-b from-slate-800 to-slate-900 flex flex-col justify-center">
-                    <p class="text-blue-400 font-bold uppercase tracking-widest text-sm mb-2 text-center">Tahmini Yatırım Planı</p>
-                    <h3 class="text-center text-slate-100 text-lg mb-6">Markanızı büyütmek için profesyonel yönetim paketimiz:</h3>
-                    
-                    <div class="text-center bg-slate-900 border border-slate-700 p-6 rounded-2xl mb-6 shadow-inner">
-                        <span class="text-slate-400 text-sm block mb-1">Aylık Tahmini Bütçe</span>
-                        <div class="text-4xl font-black text-white mb-2">8.500₺ <span class="text-lg text-slate-400 font-normal">- 15.000₺</span></div>
-                        <p class="text-xs text-slate-500">*Gereksinimlere ve reklam bütçesine göre değişiklik gösterir.</p>
-                    </div>
-
-                    <button class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-colors shadow-lg shadow-blue-900/50">
-                        <i class="fa-brands fa-whatsapp mr-2"></i> Detaylı Görüşme Talep Et
-                    </button>
+                <div class="bg-white rounded-3xl p-8 border-2 border-indigo-600 shadow-xl flex flex-col relative">
+                    <span class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-4 py-1 rounded-full text-sm font-bold">EN ÇOK TERCİH EDİLEN</span>
+                    <h3 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-2">Gelişim</h3>
+                    <div class="text-3xl font-bold mb-6">Aktif Büyüme</div>
+                    <ul class="text-gray-600 space-y-4 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Aylık 12 İçerik Yönetimi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Reklam Optimizasyonu</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Aylık Foto/Video Çekimi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Dijital PR Çalışması</li>
+                    </ul>
+                    <div class="text-2xl font-bold text-indigo-600 mb-6">20.000 TL / Ay</div>
+                    <button class="w-full py-3 rounded-xl bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition">Detaylı Bilgi Al</button>
                 </div>
+
+                <div class="bg-white rounded-3xl p-8 border border-gray-200 flex flex-col">
+                    <h3 class="text-lg font-bold text-gray-500 uppercase tracking-widest mb-2">Premium</h3>
+                    <div class="text-3xl font-bold mb-6">360 Derece</div>
+                    <ul class="text-gray-600 space-y-4 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Sınırsız İçerik Üretimi</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> İleri Seviye Reklamcılık</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> SEO ve Web Bakım</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Influencer Yönetimi</li>
+                    </ul>
+                    <div class="text-2xl font-bold text-indigo-600 mb-6">50.000 TL+ / Ay</div>
+                    <button class="w-full py-3 rounded-xl border-2 border-indigo-600 text-indigo-600 font-bold hover:bg-indigo-600 hover:text-white transition">İletişime Geç</button>
+                </div>
+
             </div>
         </div>
+    </section>
 
-    </main>
+    <footer class="py-12 text-center text-gray-500 border-t border-gray-200">
+        <p>&copy; 2026 Melih Aydoğan. Tüm hakları saklıdır.</p>
+    </footer >
 
-    <script>
-        function analiziBaslat() {
-            const igHandle = document.getElementById('igHandle').value;
-            if(!igHandle) { alert("Lütfen en azından bir Instagram kullanıcı adı girin."); return; }
-            
-            const btn = document.getElementById('analizBtn');
-            const loading = document.getElementById('loading');
-            const resultPanel = document.getElementById('resultPanel');
-
-            // Form Gizle, Yükleniyor Göster
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Taranıyor...`;
-            btn.disabled = true;
-            resultPanel.classList.add('hidden');
-            loading.classList.remove('hidden');
-            
-            // Sayfayı loading ekranına kaydır
-            loading.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
-            // 3 saniyelik sahte analiz süresi
-            setTimeout(() => {
-                loading.classList.add('hidden');
-                resultPanel.classList.remove('hidden');
-                btn.innerHTML = `Analiz Et <i class="fa-solid fa-arrow-right ml-2"></i>`;
-                btn.disabled = false;
-                
-                grafikCiz();
-                
-                // Aşağı kaydır
-                resultPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 3000);
-        }
-
-        let sosyalRadar;
-
-        function grafikCiz() {
-            if(sosyalRadar) sosyalRadar.destroy();
-
-            const ctx = document.getElementById('sosyalRadarChart').getContext('2d');
-            sosyalRadar = new Chart(ctx, {
-                type: 'radar',
-                data: {
-                    labels: ['Görsel Kalite', 'Video/Reels', 'Etkileşim', 'Düzenlilik', 'Hashtag Kullanımı', 'Bio Uyumu'],
-                    datasets: [{
-                        label: 'Mevcut Durum',
-                        data: [60, 20, 35, 40, 50, 30],
-                        backgroundColor: 'rgba(37, 99, 235, 0.2)',
-                        borderColor: 'rgba(37, 99, 235, 1)',
-                        borderWidth: 2,
-                        pointBackgroundColor: 'rgba(37, 99, 235, 1)'
-                    },
-                    {
-                        label: 'Olması Gereken (Koordine Dijital)',
-                        data: [90, 85, 80, 100, 85, 95],
-                        backgroundColor: 'rgba(34, 197, 94, 0.1)',
-                        borderColor: 'rgba(34, 197, 94, 0.5)',
-                        borderWidth: 2,
-                        borderDash: [5, 5]
-                    }]
-                },
-                options: { 
-                    scales: { r: { beginAtZero: true, max: 100 } }, 
-                    maintainAspectRatio: false,
-                    plugins: { legend: { position: 'bottom' } }
-                }
-            });
-        }
-    </script>
 </body>
 </html>
